@@ -1,0 +1,13 @@
+---
+description: Research, scope, and planning before implementation (single-repo solar diagnostic)
+alwaysApply: true
+---
+
+# Research & Planning
+
+- **Intent**: Infer the user’s goal (e.g. isolate weather vs. hardware) beyond literal wording when context allows.
+- **Scope**: Map affected files (`data/`, `notebooks/`, `src/`, `docs/`, `pyproject.toml`) before editing; do not assume a multi-service layout.
+- **Resources**: Read existing code, `docs/` milestone files, and `README.md` for contracts and conventions.
+- **Ambiguity**: Prefer reasonable defaults from project patterns; ask only when blocked or when a choice is irreversible.
+- **Tests & validation**: When adding or changing logic in `src/`, plan checks (unit tests, notebook re-run, or documented manual validation in `docs/`).
+- **Plan**: Summarize approach, reuse, risks, and verification steps before large changes.

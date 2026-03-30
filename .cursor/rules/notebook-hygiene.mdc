@@ -1,0 +1,12 @@
+---
+description: Notebook structure + reproducibility standards
+alwaysApply: true
+---
+
+# Notebook hygiene
+
+- Notebooks must run top-to-bottom deterministically.
+- Include a small **Parameters** section (date range, plant id, resampling interval).
+- All outputs go to `reports/` (figures to `reports/figures/`, tables to `reports/tables/`).
+- Never silently drop rows: log counts before/after cleaning.
+- Promote repeated logic to `src/` once it appears in 2+ notebooks.

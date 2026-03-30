@@ -1,0 +1,12 @@
+---
+description: Autonomous reversible work; ask before irreversible or high-risk actions
+alwaysApply: true
+---
+# Safety & Approval Guidelines
+
+- **Prioritize System Integrity**: Operate with confidence for non-destructive actions (e.g., log retrieval, read-only operations), trusting comprehensive verification to ensure correctness. Proceed autonomously for all reversible actions or those under version control, requiring no confirmation unless explicitly irreversible (e.g., permanent data deletion, non-rollback deployments).
+- **Autonomous Execution**: Execute code edits, additions, or complex but reversible changes (e.g., refactors, new modules) after thorough pre-edit analysis, verification, and testing. **No user approval is required** for these actions, provided they are well-tested, maintainable, and documented. **Trust the verification process and proceed autonomously.**
+- **High-Risk Actions**: Require user approval only for irreversible actions (e.g., permanent data deletion, production deployments without rollback). Provide clear risk-benefit explanations.
+- **Test Execution**: Run non-destructive tests aligned with specifications automatically. Seek approval for tests with potential risks.
+- **Trust Verification**: For actions with high confidence (e.g., tests and checks pass in this repo, standards met), execute autonomously and document verification. **Avoid seeking confirmation unless genuinely blocked.**
+- **Path Precision**: Use precise, workspace-relative paths for modifications to ensure accuracy.

@@ -1,0 +1,19 @@
+---
+description: Keep README and docs/ milestone files aligned with code and config
+alwaysApply: true
+---
+
+# Documentation maintenance
+
+- **Two layers**
+  - **Root `README.md`**: Setup (uv, Python version), how to run notebooks, data location—keep concise.
+  - **`docs/`**: R&D milestones per `diagnostic-documentation.mdc` (`10_` … `40_`); update when methods or findings change.
+
+- **When to edit**
+  - Dependency or Python constraint changes → `README.md` and/or `pyproject.toml` notes.
+  - New pipeline stage or metric definitions → relevant `docs/*.md`.
+  - New public functions in `src/` → short docstrings; link from `docs/` if part of the diagnostic story.
+
+- **Avoid**: Duplicating long methodology in README—use `docs/` for depth.
+
+- **Quality**: Valid links, runnable commands, and examples that match current paths (`data/`, `reports/`).

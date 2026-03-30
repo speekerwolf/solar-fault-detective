@@ -1,0 +1,33 @@
+---
+description: DRY for Python/config—constants and reuse without over-abstracting
+alwaysApply: true
+---
+
+# Don't Repeat Yourself (DRY)
+
+- **Principle**: Remove meaningful duplication; keep readability. Not every literal needs a constant.
+- **Scopes**: Function → module → **`src/`** package (shared helpers for notebooks and scripts). Prefer one implementation of “load plant CSV”, “resample to time grid”, etc., in `src/` once it appears twice.
+
+**Constants**
+
+- Use for repeated values with **semantic meaning** (column names, `G_MIN`, plant IDs used in many places).
+- Avoid `EMPTY_STRING = ""` or constants used only once.
+
+**Reuse in this repo**
+
+```python
+# Prefer existing helpers under src/
+from solar_diagnostic.paths import DATA_DIR  # example layout
+
+# Before adding a second copy of the same cleaning logic in notebooks/
+# promote to src/solar_diagnostic/cleaning.py
+```
+
+- **Project level**: Shared logic lives under **`src/`**, not ad hoc copies across `notebooks/`. Config snippets can live beside code or in small YAML under `data/` / project root if needed.
+
+**When not to DRY**
+
+- One-off plots or exploratory cells in a single notebook.
+- Premature abstractions that obscure the physics narrative.
+
+**Refactor cue**: Same logic in **2+** notebooks or scripts → move to `src/` and import (see `notebook-hygiene.mdc`).

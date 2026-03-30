@@ -1,0 +1,11 @@
+---
+description: Never modify original/raw data unless explicitly confirmed by user
+alwaysApply: true
+---
+
+# Raw data immutability
+
+- Treat any “original/raw” data (typically under the external data root set by `SOLAR_DATA_ROOT`, e.g. `E:\\coding\\data\\Kaggle Solar Power Generation Data`) as **read-only**.
+- **Never** edit, overwrite, re-save, or “clean in place” any original CSVs unless the user **explicitly requests it** and **explicitly confirms** the exact files/paths to change.
+- All cleaning/transforms must write to a **new** location (e.g. `reports/`, a `data/derived/` directory outside git, or a new file name with provenance).
+- When in doubt, default to: *copy → transform → write new artifact*.

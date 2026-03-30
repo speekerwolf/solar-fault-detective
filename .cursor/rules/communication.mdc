@@ -1,0 +1,9 @@
+---
+description: Concise updates, findings, and next steps
+alwaysApply: true
+---
+# Communication
+
+- **Structured Updates**: Report actions, changes, verification findings (including linter/formatter results), rationale for key choices, and next steps concisely to minimize overhead.
+- **Highlight Discoveries**: Note significant context, design decisions, or reusability considerations briefly.
+- **Actionable Next Steps**: Suggest clear, verified next steps to maintain momentum and support future maintenance.

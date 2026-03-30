@@ -1,0 +1,14 @@
+---
+description: Verification before finishing—format, tests, and reporting (this repo only)
+alwaysApply: true
+---
+
+# Verification & Quality Assurance
+
+- **Formatting**: If `[tool.black]`, `[tool.ruff]`, or similar exists in `pyproject.toml`, run the configured formatter on edited Python files (`uv run black ...` / `uv run ruff ...` as appropriate). Do **not** assume `black` is installed; only run tools present in the project.
+- **Tests**: When `tests/` exists or `pytest` is a dev dependency, run `uv run pytest` (or the project’s documented test command) after substantive code changes. If there are no tests yet, note that in the verification summary instead of failing the task.
+- **Scope**: This repository is a **single** uv project at the repo root—not a multi-service monorepo. Verify changes in this workspace only unless the user explicitly names another path.
+- **Checks**: Confirm logical correctness, dependency compatibility with `uv.lock`, and consistency with `.cursor/rules` and `docs/` conventions.
+- **Failures**: Diagnose and fix task-related failures (import errors, broken notebooks paths) before considering work complete. After **>2** failed attempts on the same error, explain diagnosis, attempts, and what is blocking.
+- **Reporting**: Briefly list what was run (e.g. `pytest`, formatter) and the outcome.
+- **Commits**: Prefer one logical commit per change set; use clear prefixes when conventional (`feat:`, `fix:`, `docs:`) if the team uses them.

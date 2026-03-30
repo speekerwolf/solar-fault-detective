@@ -1,0 +1,12 @@
+---
+description: Read before edit; implement plans in this repo with strict rule adherence
+alwaysApply: true
+---
+
+# Execution
+
+- **Pre-edit**: Re-read files you change so edits match intent and existing patterns.
+- **Implement**: Execute the agreed plan in **this repository** (`data/`, `notebooks/`, `src/`, `docs/`, `reports/`). Touch all files the task actually needs; avoid unrelated refactors.
+- **Ambiguity**: If multiple valid approaches remain, try the smallest reversible change first; document what you chose.
+- **Minor fixes**: Safe fixes in the same area (typos, obvious import errors) are fine with a short note.
+- **Rules**: Follow user instructions, `.cursor/rules`, and explicit constraints (paths, commit style) before finishing.

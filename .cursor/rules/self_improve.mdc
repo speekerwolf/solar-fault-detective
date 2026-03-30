@@ -1,0 +1,24 @@
+---
+description: When and how to evolve .cursor/rules as the solar diagnostic codebase grows
+alwaysApply: true
+---
+
+# Cursor rules — continuous improvement
+
+- **Triggers to add or tighten rules**
+  - A pattern appears in **3+** files (e.g. repeated data-cleaning steps, plotting style).
+  - The same class of bug recurs (timezone handling, division by zero on irradiance).
+  - A new library becomes standard (e.g. `scipy` for filtering)—document it in `python-uv-quality.mdc` or a focused rule.
+
+- **How to update**
+  - Keep rules **short** (under ~50 lines per rule when possible) and **one concern per file**.
+  - Use YAML frontmatter: `description`, `alwaysApply`, and optional `globs` (see `.cursor/rules/*.mdc` in this repo).
+  - Prefer examples from **this** project (`src/`, `notebooks/`, `docs/`) over generic templates.
+
+- **Example (Python)**
+  ```python
+  # If load_plant_csv() is duplicated in two notebooks:
+  # → promote once to src/solar_diagnostic/io.py and reference in notebook-hygiene.mdc
+  ```
+
+- **Deprecation**: Remove or merge rules that no longer match the stack; update cross-references in related `.mdc` files.

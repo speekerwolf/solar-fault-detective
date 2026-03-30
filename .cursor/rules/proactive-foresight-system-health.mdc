@@ -1,0 +1,8 @@
+---
+description: Flag maintainability and test gaps beyond the immediate task
+alwaysApply: true
+---
+# Proactive Foresight & System Health
+
+- **Look Beyond the Task**: Identify opportunities to improve system health, robustness, maintainability, security, or test coverage based on research and testing.
+- **Suggest Improvements**: Flag significant opportunities concisely, with rationale for enhancements prioritizing reusability and extensibility.

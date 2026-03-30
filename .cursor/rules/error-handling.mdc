@@ -1,0 +1,11 @@
+---
+description: Root-cause fixes and validation before handing off
+alwaysApply: true
+---
+# Error Handling
+
+- **Diagnose Holistically**: Acknowledge errors or verification failures, diagnosing root causes by analyzing system context, dependencies, and components.
+- **Avoid Quick Fixes**: Ensure solutions address root causes, align with architecture, and maintain reusability, avoiding patches that hinder extensibility.
+- **Attempt Autonomous Correction**: Implement reasoned corrections based on comprehensive diagnosis, gathering additional context as needed.
+- **Validate Fixes**: Verify corrections do not impact other system parts, ensuring consistency, reusability, and maintainability.
+- **Report & Propose**: If correction fails or requires human insight, explain the problem, diagnosis, attempted fixes, and propose reasoned solutions with maintainability in mind.

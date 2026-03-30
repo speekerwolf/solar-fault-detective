@@ -1,0 +1,16 @@
+---
+description: Python + uv conventions (production-ready R&D)
+alwaysApply: true
+---
+
+# Python + uv quality rules
+
+- Python target: **3.13+**. Keep `pyproject.toml` constraints consistent with actual dependency Python requirements.
+- Use **type hints** for all public functions. Prefer small, testable functions over monolith notebooks.
+- Prefer `pandas` for EDA, `numpy/scipy` for signal processing, `matplotlib/seaborn` for plots.
+- Use `pathlib.Path` for paths; do not hardcode absolute local paths in code or notebooks.
+- Keep dependencies minimal and explicit; update `uv.lock` whenever `pyproject.toml` dependency groups change.
+- Default workflow:
+  - `uv sync --all-groups` (install runtime + dev dependencies)
+  - `uv run python ...`
+  - `uv run jupyter lab` (if/when added)

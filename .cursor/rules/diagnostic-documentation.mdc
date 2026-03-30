@@ -1,0 +1,21 @@
+---
+description: Required documentation for the 4-step diagnostic pipeline
+alwaysApply: true
+---
+
+# Diagnostic documentation rules
+
+For each milestone, produce/update a doc in `docs/` with these sections:
+- **Question** (what underperformance are we explaining?)
+- **Data contracts** (columns, units, sampling, time zone, plant IDs)
+- **Integrity checks** (what was validated; what failed; how fixed/handled)
+- **Method** (math + algorithm; include key formulas in LaTeX)
+- **Validation** (sanity checks; counterexamples; cross-plant comparison)
+- **Findings** (high-signal plots/tables; anomaly taxonomy)
+- **Actionable next steps** (what to inspect/replace/clean; what experiment next)
+
+Required milestone docs:
+- `docs/10_data_audit.md`: missing timestamps, duplicates, saturation, time shifts, mismatched series.
+- `docs/20_physics_baseline.md`: irradiation → DC power baseline model and constraints.
+- `docs/30_efficiency_analysis.md`: \(\\eta_{dc}(t)=\\frac{P_{dc}(t)}{G(t)}\\) plus temperature correlation.
+- `docs/40_comparative_diagnostics.md`: Plant1 vs Plant2 separation of local faults vs shared weather.
